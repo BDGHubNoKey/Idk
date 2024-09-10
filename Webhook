@@ -35,8 +35,8 @@ while statsalert == true do
     wait(statsalerttiming)
 
     local embed = {
-        ["title"] = "BDG Jailbreak Stats",
-        ["description"] = "View Your Jailbreak Stats Belew :) "..tostring(statsalerttiming).." seconds.",
+        ["title"] = "Hey, Your Jailbreak Stats Are Here",
+        ["description"] = "View Your Jailbreak Stats Belew :) They Are Sent Every "..tostring(statsalerttiming).." seconds.",
         ["color"] = 65280,
         ["fields"] = {
             {
