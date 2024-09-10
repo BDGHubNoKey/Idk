@@ -6,7 +6,7 @@
 -- DONT TOUCH WHAT'S BELOW
 
 local url = "https://discord.com/api/webhooks/1282602298354434081/OqgBGMZrJFkJi5kav3SRTO_p43wPBgimuMq-ZYS1nCPLUG8Jwrdlwv4OKB8FbkRmlsbJ" -- webhook here
-local statsalerttiming = 180 -- wait time in seconds to send each embed
+local statsalerttiming = 15 -- wait time in seconds to send each embed
 
 if game.PlaceId ~= 606849621 then return end
 
