@@ -1,41 +1,15 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bdgxs/BDG-Key-System/main/Ui')))()
-OrionLib:MakeNotification({
-	Name = "Jailbreak Auto Farm Hub",
-	Content = "Jailbreak Auto Farm Hub Is Loading!!",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-local Window = OrionLib:MakeWindow({Name = "BDG Hub | V1.0.5 | VIP |", HidePremium = false, SaveConfig = true, ConfigFolder = "BDG Hub | VIP |", IntroText = "Welcome To BDG Hub | VIP |"})
-local Tab = Window:MakeTab({
-	Name = "Lumber tycoon 2",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-local Section = Tab:AddSection({
-	Name = "Scripts For Auto Farming In Jailbreak"
-})
-Tab:AddButton({
-	Name = "toggle",
-	Callback = function()
+if game.PlaceId ~= 606849621 then return end
+loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV4'))()
 
-local UserInputService = game:GetService("UserInputService")
+if game.PlaceId ~= 606849621 then return end
+loadstring(game:HttpGet("https://paste.ee/r/8cWac/0",true))()
 
--- Function to handle input
-local function onInput(input, gameProcessedEvent)
-    -- Check if the input is from the keyboard and not processed by other GUI elements
-    if not gameProcessedEvent then
-        -- Check if the input is the Shift key
-        if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.LeftShift then
-            print("Shift key pressed!") -- You can replace this with any action you want to trigger
-            -- Example action: Change player speed
-            loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV4'))() = 16 -- Reset speed back to default
-            end
-        end
-    end
-end
+if game.PlaceId ~= 606849621 then return end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt",true))()
 
--- Connect the input event to our function
-UserInputService.InputBegan:Connect(onInput)
 
-  	end    
-})
+
+
+
+
+
