@@ -34,7 +34,7 @@ function SendMessageEMBED(url, embed)
         Headers = headers,
         Body = body
     })
-    print("Webhook sent from Snowy's webhooker")
+    print("Webhook sent from BDG webhooker")
 end
 
 while statsalert == true do
