@@ -1,21 +1,68 @@
-local HttpService = game:GetService("HttpService")
+--[[
+    developed by snowyv4
+    discord: snowydemise
+--]]
 
-local target = "https://discord.com/api/webhooks/1282602298354434081/OqgBGMZrJFkJi5kav3SRTO_p43wPBgimuMq-ZYS1nCPLUG8Jwrdlwv4OKB8FbkRmlsbJ"
-local player = game.Players.LocalPlayer
-local balance = player:WaitForChild("leaderstats"):WaitForChild("Money").Value
+-- DONT TOUCH WHAT'S BELOW
 
-local payload = {
-    ["username"] = player.Name,
-    ["embeds"] = {{
-        ["title"] = "Money",
-        ["description"] = "Player $ balance",
-        ["fields"] = {{
-            ["name"] = "Balance",
-            ["value"] = tostring(balance),
-            ["inline"] = true
-    }}}}}
+local url = "https://discord.com/api/webhooks/1282602298354434081/OqgBGMZrJFkJi5kav3SRTO_p43wPBgimuMq-ZYS1nCPLUG8Jwrdlwv4OKB8FbkRmlsbJ" -- webhook here
+local statsalerttiming = 180 -- wait time in seconds to send each embed
 
-local function Whook(payload)
-    local jsonData = HttpService:JSONEncode(payload)
-    pcall(function() HttpService:PostAsync(target, jsonData, Enum.HttpContentType.ApplicationJson) end) end
-Whook(payload)
+if game.PlaceId ~= 606849621 then return end
+
+local startingMoney = tostring(game.Players.LocalPlayer.leaderstats.Money.Value)
+
+function SendMessageEMBED(url, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Webhook sent from Snowy's webhooker")
+end
+
+while statsalert == true do
+    wait(statsalerttiming)
+
+    local embed = {
+        ["title"] = "BDG Jailbreak Stats",
+        ["description"] = "Get Your Jailbreak Stats"..tostring(statsalerttiming).." seconds.",
+        ["color"] = 65280,
+        ["fields"] = {
+            {
+                ["name"] = "Username",
+                ["value"] = game.Players.LocalPlayer.Name
+            },
+            {
+                ["name"] = "Starting Money",
+                ["value"] = "$"..startingMoney
+            },
+            {
+                ["name"] = "Current money",
+                ["value"] = "$"..tostring(game.Players.LocalPlayer.leaderstats.Money.Value)
+            },
+            {
+                ["name"] = "Money made",
+                ["value"] = "$"..game.Players.LocalPlayer.leaderstats.Money.Value - startingMoney
+            }
+        }
+    }
+
+    SendMessageEMBED(url, embed)
+end
