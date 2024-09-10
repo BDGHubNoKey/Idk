@@ -1,12 +1,6 @@
---[[
-    developed by snowyv4
-    discord: snowydemise
---]]
-
--- DONT TOUCH WHAT'S BELOW
-
-local url = "https://discord.com/api/webhooks/1282602298354434081/OqgBGMZrJFkJi5kav3SRTO_p43wPBgimuMq-ZYS1nCPLUG8Jwrdlwv4OKB8FbkRmlsbJ" -- webhook here
+local url = "https://discord.com/api/webhooks/1282870051778854912/hNpMpgDaWDWlnptIhK6ezC4InTKUcmkkKxRlMlvI_Yybn_0j-UEExfCBlDMlJJhOaEVv" -- webhook here
 local statsalerttiming = 15 -- wait time in seconds to send each embed
+local statsalert = true
 
 if game.PlaceId ~= 606849621 then return end
 
