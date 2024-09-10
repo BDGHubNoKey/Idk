@@ -1,5 +1,5 @@
 local url = "https://discord.com/api/webhooks/1282870051778854912/hNpMpgDaWDWlnptIhK6ezC4InTKUcmkkKxRlMlvI_Yybn_0j-UEExfCBlDMlJJhOaEVv" -- webhook here
-local statsalerttiming = 300 -- wait time in seconds to send each embed
+local statsalerttiming = 5 -- wait time in seconds to send each embed
 local statsalert = true
 
 if game.PlaceId ~= 606849621 then return end
