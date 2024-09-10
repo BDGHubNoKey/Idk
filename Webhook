@@ -1,0 +1,21 @@
+local HttpService = game:GetService("HttpService")
+
+local target = "https://discord.com/api/webhooks/1282602298354434081/OqgBGMZrJFkJi5kav3SRTO_p43wPBgimuMq-ZYS1nCPLUG8Jwrdlwv4OKB8FbkRmlsbJ"
+local player = game.Players.LocalPlayer
+local balance = player:WaitForChild("leaderstats"):WaitForChild("Money").Value
+
+local payload = {
+    ["username"] = player.Name,
+    ["embeds"] = {{
+        ["title"] = "Money",
+        ["description"] = "Player $ balance",
+        ["fields"] = {{
+            ["name"] = "Balance",
+            ["value"] = tostring(balance),
+            ["inline"] = true
+    }}}}}
+
+local function Whook(payload)
+    local jsonData = HttpService:JSONEncode(payload)
+    pcall(function() HttpService:PostAsync(target, jsonData, Enum.HttpContentType.ApplicationJson) end) end
+Whook(payload)
